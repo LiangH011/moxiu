@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>免打扰-开</title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/comm.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<style>
+			#wrap{background: #F3F3F3;}
+			#main{margin-top: 30px;}
+			.btn{width:90px;height: 35px;line-height: 35px;text-align: right; border:none;background: #4BADDF;color: #fff;
+				border-radius: 20px;font-size: 20px;padding: 0px 5px;margin: 0 auto;}
+			.btn i{display: inline-block;width:25px;height: 25px;background: #fff;border-radius: 50%;position: relative;top: 5px;}
+			p{padding:20px;margin-top: 30px;line-height: 26px;color: #6E6F6F;font-size: 16px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="btn" onclick="mdrOFF();">
+					已开启<i></i>
+				</div>
+				<p>注意：开启功能后，将不会收到消息提醒，但仍能接收查看信息</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	function mdrOFF(){
+				api.openWin({
+					 name: 'mdrOFF',
+				     url: api.wgtRootDir+ '/html/window/win.html',
+					pageParam: {
+						frameName:'addrFrame',
+						frameUrl:api.wgtRootDir+ '/html/user/mdrOFF.html',
+						headerTitle:'消息免打扰'
+					}
+				});
+			}
+</script>

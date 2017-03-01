@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/cx.css" />
+	</head>
+	<style>
+		 .logo{
+      	text-align: center;
+      	padding: 45px 0;
+      }
+      .logo img{
+      	width: 80px;
+      }
+      .login{
+      	padding: 0 25px 20px 25px;
+      	
+      }
+      .login i{
+      	width: 40px;
+      	font-size: 32px;
+      	color: #868686;
+      }
+      .phone{
+      	border-bottom: 1px solid #CACACA;
+      	line-height: 35px;
+      	text-indent: 5px;
+      }
+      .phone input{
+      	width: 100%;
+      	list-style: none;
+      	outline-style: none;
+      	line-height: 35px;
+      }
+      .btn{
+      	margin: 0 25px 20px 25px;
+      	background-color: #40B5F0;
+      	height: 45px;
+      	border-radius: 5px;
+      	color: #fff;
+      	text-align: center;
+      	line-height: 45px;
+      }
+	</style>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="logo">
+					<img src="../../image/logo.png" />
+				</div>
+				<div class="flex-box login">
+					<i class="icon-phone"></i>
+					<div class="flex1 phone">
+						<input type="text" placeholder="请输入邮箱" name="email" />
+					</div>
+				</div>
+				<div class="flex-box login">
+					<i class="icon-lock"></i>
+					<div class="flex1 phone">
+						<input type="text" placeholder="请输入QQ" name="qq" />
+					</div>
+				</div>
+				<div class="btn" onclick="addEmail();">添加</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../script/api.js" ></script>
+		<script>
+			/**
+			 * 添加用户资料
+			 * 
+			 * */
+			function addEmail(){
+				var eamil=$api.val($api.dom("[name=email]"));//获取email
+				var qq=$api.val($api.dom("[name=qq]"));//获取qq
+				var id=$api.getStorage("uid");//从本地缓存数据中拿取用户id
+				api.ajax({
+				    url: 'http://118.89.48.244/index.php/Home/App/add_data',
+				    method: 'post',
+				    data: {
+				        values: {
+				            email: eamil,
+				            qq:qq,
+				            id:id
+				        }
+				    }
+				}, function(ret, err) {
+				    if (ret) {
+				    	if(ret.flag==1){
+				    		api.toast({
+							    msg: '添加成功',
+							    duration: 2000,
+							    location: 'middle'
+							});
+				    		api.closeWin();
+				    	}else{
+				    		alert(ret.msg);
+				    	}
+				    	
+//				    	alert(ret.flag);
+//				    	alert(ret.msg);
+//				        api.alert({ msg: JSON.stringify(ret) });
+				    } else {
+				        api.alert({ msg: JSON.stringify(err) });
+				    }
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/comm.css" />
+	</head>
+	<style>
+		body{
+			background-color: #F3F3F3;
+			/*min-width: 320px;*/
+		}
+		.list{
+			background-color: #fff;
+			margin: 10px;
+			padding: 8px;
+		}
+		.list img{
+			width: 100px;
+			height: 100px;
+			padding-right: 10px;
+		}
+		.title{
+			font-size: 14px;
+			font-weight: 700;
+			padding-top: 10px;
+			height: 30px;
+			line-height: 30px;
+			overflow: hidden;
+			
+		}
+		.content{
+			font-size: 12px;
+			color: #717171;
+			padding-bottom: 10px;
+			padding-top: 5px;
+		}
+		span{
+			font-size: 12px;
+		}
+	</style>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi1.png" />
+					<div class="flex1">
+						<p class="title">韩版宽松卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">120.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">160.00</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi2.png" />
+					<div class="flex1">
+						<p class="title">纯黑显瘦卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">125.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">140.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi3.png" />
+					<div class="flex1">
+						<p class="title">韩国大东门时尚卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">180.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">200.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi4.png" />
+					<div class="flex1">
+						<p class="title">潮流字母黑色卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">120.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">125.00</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi5.png" />
+					<div class="flex1">
+						<p class="title">卡通字母拼接卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">150.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">165.00</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi6.png" />
+					<div class="flex1">
+						<p class="title">情侣卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">145.00</span>
+					    	</div>
+					    	<div class="flex1" onclick="weiyiInfo();">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">150.00</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi7.png" />
+					<div class="flex1">
+						<p class="title">可爱粉色显瘦时尚卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">80.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">85.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="weiyiInfo();">
+					<img src="../../image/weiyi8.png" />
+					<div class="flex1">
+						<p class="title">韩国东大门时尚卫衣</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">120.00</span>
+					    	</div>
+					    	<div class="flex1" onclick="weiyiInfo();">
+					    		<span style="color: #8B8B8B;">原价￥</span>
+					    		<del style="font-size: 18px;color: #818181;">125.00</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	function weiyiInfo(){
+		api.openWin({
+		    name:'weiyiInfoFram',
+		    	url:api.wgtRootDir+'/html/window/weiyiInfo.html'
+		   	});
+	}
+</script>

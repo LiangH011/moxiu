@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>测试详情</title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/comm.css" />
+	</head>
+	<style>
+		header{height: 50px;border-bottom: 1px solid #3B9ACB;line-height: 50px;font-size: 14px;}
+		.icon-angle-left{
+			font-size: 32px;
+			position: relative;
+			top:8px;
+			padding-left: 15px;
+			color: #6E6F6F;
+		}
+		footer{
+			height: 70px;
+			background-color: #fff;
+		}
+		.foot{
+			padding: 0 60px;
+		}
+		.foot img{
+			width: 50px;
+			height: 50px;
+		}
+		.cart{height: 40px;line-height:40px;border-radius: 5px;background: #19B5FE;padding: 10px;text-align: center;color: #fff;
+			font-size: 16px;font-weight: 800;margin-right: 10px;margin-top: 5px;}
+		
+		.buy{height: 40px;line-height:40px;border-radius: 5px;background: #F15352;padding: 10px;text-align: center;color: #fff;
+			font-size: 16px;font-weight: 800;margin-top: 5px;}
+		
+	</style>
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="flex-box">
+					<div class="flex1">
+						<i class="icon-angle-left" onclick="api.closeWin();"></i>
+						<span style="padding-left: 10px; color: #333;font-size: 16px;">商品详情</span>
+					</div>
+				</div>
+			</header>
+			<div id="main">
+				
+			</div>
+			<footer>
+				<div class="flex-box foot">
+					<div class="flex1 cart" onclick="myLogin();">
+						<i class="icon-cart"></i>
+						加入测试车
+					</div>
+					<div class="flex1 buy">
+						<i class="icon-card" style="font-size: 20px;position: relative;top: 5px;"></i>
+						立即购买
+					</div>
+					
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript" src="../../script/api.js" ></script>
+		<script>
+		    apiready=function(){
+		    	var header=$api.dom("#header");
+		    	    headerPos=$api.offset(header);
+		    	var main=$api.dom("#main");
+		    	    mainPos=$api.offset(main);
+//		    	    alert();
+//		    	    return;
+		    	api.openFrame({
+				    name: 'maoyiInfo',
+				    url:api.wgtRootDir+ '/html/maoyi/proInfo.html',
+				    rect: {
+				        x: 0,
+				        y: headerPos.h,
+				        w: 'auto',
+				        h: mainPos.h
+				    }
+				});
+		    }
+		    
+		    
+		   function myLogin(){
+		    	api.openWin({
+		    		name:'login',
+		    		url:api.wgtRootDir+'/html/window/win.html'
+		    	});
+		    }
+		</script>
+	</body>
+</html>

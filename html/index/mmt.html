@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>买卖通</title>
+		<link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/comm.css"/>
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
+		<link rel="stylesheet" href="../../css/carousel.css" />
+		<script type="text/javascript" src="../../script/swiper.min.js"></script>
+		<script type="text/javascript" src="../../script/api.js"></script>
+		<style>
+			.nav>div{height:80px;line-height:80px;text-align: center;border-top: 1px solid #E3E5E4;background: #F3F3F3;color: #202020;}
+			.pro-main{padding: 10px;}
+			.prolist{height:162px;padding-bottom:20px;}
+			.prolist>div{height: 162px;text-align: center;color: #2B2B2B;font-size: 16px;}
+			.prolist>div img{width:60px;height:60px;text-align: center;}
+			.prolist>div p{line-height: 20px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="mian">
+				<div class="flex-box">
+					<div class="swiper-container" style="height: 150px;">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="../../image/banner_temporary.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="../../image/banner_temporary.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="../../image/banner_temporary.png">
+							</div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+						<!-- 左右图标按钮 -->
+						<!--<div class="swiper-button-next"></div>
+	        <div class="swiper-button-prev"></div> -->
+					</div>
+				</div>
+				<div class="flex-box">
+					<div class="flex1 nav">
+						<div style="background: #fff;border-top-color: #fff;">时钟与定时</div>
+						<div>通信</div>
+						<div>数据采集</div>
+						<div>分立元件</div>
+						<div>接口</div>
+						<div>存储器</div>
+						<div>微控制器</div>
+						<div>多媒体</div>
+					</div>
+					<div class="flex3 pro-mainn">
+						<div class="flex-box prolist" onclick="openSP();">
+							<div class="flex1">
+								<img src="../../image/mmt1.png" />
+								<p>时钟缓冲器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt2.png" />
+								<p>时钟合成器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt3.png" />
+								<p>锁相环</p>
+							</div>
+						</div>
+						<div class="flex-box prolist">
+							<div class="flex1">
+								<img src="../../image/mmt1.png" />
+								<p>时钟缓冲器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt2.png" />
+								<p>时钟合成器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt3.png" />
+								<p>锁相环</p>
+							</div>
+						</div>
+						<div class="flex-box prolist">
+							<div class="flex1">
+								<img src="../../image/mmt1.png" />
+								<p>时钟缓冲器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt2.png" />
+								<p>时钟合成器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt3.png" />
+								<p>锁相环</p>
+							</div>
+						</div>
+						<div class="flex-box prolist">
+							<div class="flex1">
+								<img src="../../image/mmt1.png" />
+								<p>时钟缓冲器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt2.png" />
+								<p>时钟合成器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt3.png" />
+								<p>锁相环</p>
+							</div>
+						</div>
+						<div class="flex-box prolist">
+							<div class="flex1">
+								<img src="../../image/mmt1.png" />
+								<p>时钟缓冲器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt2.png" />
+								<p>时钟合成器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt3.png" />
+								<p>锁相环</p>
+							</div>
+						</div>
+						<div class="flex-box prolist">
+							<div class="flex1">
+								<img src="../../image/mmt1.png" />
+								<p>时钟缓冲器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt2.png" />
+								<p>时钟合成器</p>
+							</div>
+							<div class="flex1">
+								<img src="../../image/mmt3.png" />
+								<p>锁相环</p>
+							</div>
+						</div>
+						<div class="flex-box prolist">
+							<div class="flex1">
+								<img src="../../image/mmt-other.png" />
+								<p>其他</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		//        左右图标按钮
+		//         nextButton: '.swiper-button-next',
+		//         prevButton: '.swiper-button-prev',
+		paginationClickable: true,
+		spaceBetween: 30,
+		centeredSlides: true,
+		autoplay: 2500,
+		autoplayDisableOnInteraction: false
+	});
+	
+	function openSP(){
+		api.openWin({
+		    name:'mmtListFrame',
+		    	url:api.wgtRootDir+'/html/window/mmtList.html'
+		   	});
+	}
+
+</script>

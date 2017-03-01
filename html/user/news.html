@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/comm.css"/>
+		<title>消息记录-聊天记录</title>
+	<style>
+		header{height: 50px;border-bottom: 1px solid #3B9ACB;line-height: 50px;font-size: 14px;}
+		.icon-angle-left{
+			font-size: 32px;
+			position: relative;
+			top:8px;
+			padding-left: 15px;
+			color: #6E6F6F;
+		}
+		.list{padding: 10px;height: 40px;border-bottom: 1px solid #E4E4E4;}    	
+		.title{height: 40px;line-height: 20px;font-size: 16px;}
+		.name{color: #525252;}
+		.time{color:#8C8C8C;}
+		.money{text-align: right;font-size: 20px;color: #E64239;}
+		.zhuanrang{margin:10px 25px;height: 40px;line-height: 40px;text-align: center;background: #19B5FE;color: #fff;border-radius: 5px;font-size: 16px;}
+	</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="flex-box">
+					<div class="flex1">
+						<i class="icon-angle-left" onclick="api.closeWin();"></i>
+					</div>
+					<div class="flex1" style="text-align: center;color: #747575;">消息记录</div>
+					<div class="flex1" style="text-align: right;padding-right: 8px;">
+						<span style="color: #2A91C6;">消息</span>
+						<i class="icon-exchange"></i>
+						<span onclick="openchat()" >聊天</span>
+					</div>
+				</div>
+			</header>
+			<div id="main">
+				<div class="list">
+					<div class="title">
+						<p class="name">您的账户以已成功充值金额350.00元</p>
+						<p class="time">
+							<span>2015-01-22</span>
+							<span>15:21:12</span>
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="title">
+						<p class="name">您的账户以已成功充值金额350.00元</p>
+						<p class="time">
+							<span>2015-01-22</span>
+							<span>15:21:12</span>
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="title">
+						<p class="name">您的账户以已成功充值金额350.00元</p>
+						<p class="time">
+							<span>2015-01-22</span>
+							<span>15:21:12</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function openchat(){
+				api.openWin({
+				    name: 'chat',
+				    url: api.wgtRootDir+ '/html/user/chat.html',
+				});
+			}
+</script>

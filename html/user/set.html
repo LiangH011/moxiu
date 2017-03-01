@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>设置</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/comm.css"/>
+    <style>
+         .proList{height: 100px;border-bottom: 1px solid #F3F3F3;line-height: 100px;text-align: center;background: #fff;}
+        .box1 .proImg i{background: #20E073;}
+        .box2 .proImg i{background: #4DB7E7;}
+        .box3 .proImg i{background: #F09B74;}
+        .box4 .proImg i{background: #1BA39C;}
+        .box5 .proImg i{background: #EB5B50;}
+        .box6 .proImg i{background: #FF9A3F;}
+        .box7 .proImg i{background: #EF5483;}
+        .proImg{text-align: left;padding-left: 10px;}
+        .proImg i{ color: #fff;font-size:40px;position: relative;top: 10px;padding: 10px;padding-top:5px;border-radius: 10px;}
+        .title{color: #666;padding-left: 10px;font-size: 20px;}
+        .arrow{text-align: right;padding-right: 20px;}
+        .arrow i{font-size:60px;color: #A9A9A9;position: relative;top:20px;}
+    </style>
+</head>
+<body>
+   <div id="wrap">
+    	<div id="main">
+    		<div class="flex-box proList box1" >
+    			<div class="flex1 proList proImg">
+    				<i class="icon-picture"></i>
+    				<span class="title">头像设置</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box2" >
+    			<div class="flex1 proImg">
+    				<i class="icon-id"></i>
+    				<span class="title">昵称设置</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box3" onclick="addr();">
+    			<div class="flex1 proImg">
+    				<i class="icon-adress"></i>
+    				<span class="title">地址管理</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box4" onclick="email();">
+    			<div class="flex1 proImg">
+    				<i class="icon-mail_2"></i>
+    				<span class="title">邮箱管理</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box5" onclick="mima();">
+    			<div class="flex1 proImg">
+    				<i class="icon-reset"></i>
+    				<span class="title">修改密码</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box6" onclick="libi();">
+    			<div class="flex1 proImg">
+    				<i class="icon-present"></i>
+    				<span class="title">利币管理</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box7" >
+    			<div class="flex1 proImg">
+    				<i class="icon-share_friends"></i>
+    				<span class="title">推荐好友</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    
+</body>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	/**
+	 *  退出登录
+	 *  删除本地的缓存数据
+	 *  第一步：定义函数
+	 *  第二步: 使用弹出框提示用户是否真要退出
+	 *  第三步： 删除本地储存的用户名和密码
+	 *  第四步： 在关闭窗口之前 ，广播一个事件（登录界面的时候加载登录页面）
+	 * */
+	
+	function outLogin(){
+		api.confirm({
+		    title: '提示信息',
+		    msg: '你确定要退出吗？',
+		    buttons: ['确定', '取消']
+		}, function(ret, err) {
+			if(ret.buttonIndex==1){
+				$api.rmStorage("username");
+				$api.rmStorage("password");//删除本地储存的数据
+				//作用在登录界面时接收这个广播事件，用于加载登录的模块
+				api.sendEvent({
+				    name: 'outLogin'
+				});
+				api.closeWin();
+			}
+		});
+	}
+	
+	
+	
+	function addr(){
+		api.openWin({
+			 name: 'addr',
+		     url: api.wgtRootDir+ '/html/window/win.html',
+			pageParam: {
+				frameName:'addrFrame',
+				frameUrl:api.wgtRootDir+ '/html/user/addr.html',
+				headerTitle:'地址管理'
+			}
+		});
+	}
+	function email(){
+		api.openWin({
+			 name: 'email',
+		     url: api.wgtRootDir+ '/html/window/win.html',
+			pageParam: {
+				frameName:'addrFrame',
+				frameUrl:api.wgtRootDir+ '/html/user/emailList.html',
+				headerTitle:'邮箱管理'
+			}
+		});
+	}
+	function mima(){
+		api.openWin({
+			 name: 'mima',
+		     url: api.wgtRootDir+ '/html/window/win.html',
+			pageParam: {
+				frameName:'addrFrame',
+				frameUrl:api.wgtRootDir+ '/html/user/mima.html',
+				headerTitle:'修改密码'
+			}
+		});
+	}
+	function libi(){
+		api.openWin({
+			 name: 'libi',
+		     url: api.wgtRootDir+ '/html/window/win.html',
+			pageParam: {
+				frameName:'addrFrame',
+				frameUrl:api.wgtRootDir+ '/html/user/libi.html',
+				headerTitle:'利币管理'
+			}
+		});
+	}
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>免打扰-关</title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/comm.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<style>
+			#wrap{background: #F3F3F3;}
+			#main{margin-top: 30px;}
+			.btn{width:80px;height: 35px;line-height: 35px;border:1px solid #8A8B91;background: #fff;color: #6D6E76;
+				border-radius: 20px;font-size: 20px;padding: 0px 5px;margin: 0 auto;}
+			.btn i{display: inline-block;width:25px;height: 25px;background: #6D6E76;border-radius: 50%;position: relative;top: 5px;margin-right: 5px;}
+			p{padding:20px;margin-top: 30px;line-height: 26px;color: #6E6F6F;font-size: 16px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="btn" onclick="mdrON();">
+					<i></i>关闭
+				</div>
+				<p>注意：开启功能后，将不会收到消息提醒，但仍能接收查看信息</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	function mdrON(){
+				api.openWin({
+					 name: 'mdrON',
+				     url: api.wgtRootDir+ '/html/window/win.html',
+					pageParam: {
+						frameName:'addrFrame',
+						frameUrl:api.wgtRootDir+ '/html/user/mdrON.html',
+						headerTitle:'消息免打扰'
+					}
+				});
+			}
+</script>

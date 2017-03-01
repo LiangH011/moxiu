@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/comm.css"/>
+		<title>消息记录-聊天记录</title>
+	<style>
+		header{height: 50px;border-bottom: 1px solid #3B9ACB;line-height: 50px;font-size: 14px;}
+		.icon-angle-left{
+			font-size: 32px;
+			position: relative;
+			top:8px;
+			padding-left: 15px;
+			color: #6E6F6F;
+		}
+		.list{padding: 10px;height:80px;border-bottom: 1px solid #E4E4E4;} 
+		.img{height: 80px;line-height: 80px;position: relative;padding-right: 5px;} 
+		.img i{font-size: 14px;border-radius: 50px;display: block;width: 16px;height: 16px;text-align: center;line-height: 16px;font-style: normal;color: #fff;background: #FF3C00;
+			position: absolute;top: -4px;left: 50px;}
+		.name{color: #080808;height: 40px;font-size: 18px;}
+		.info{color:#B9B9B9;height:30px;font-size: 16px;}
+		.zhuanrang{margin:10px 25px;height: 40px;line-height: 40px;text-align: center;background: #19B5FE;color: #fff;border-radius: 5px;font-size: 16px;}
+		.time{padding:0 5px;text-align: right;color: #B9B9B9;}
+	</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="flex-box">
+					<div class="flex1">
+						<i class="icon-angle-left" onclick="api.closeWin();"></i>
+					</div>
+					<div class="flex1" style="text-align: center;color: #747575;">聊天记录</div>
+					<div class="flex1" style="text-align: right;padding-right: 8px;">
+						<span onclick="opennews()">消息</span>
+						<i class="icon-exchange"></i>
+						<span style="color: #2A91C6;" >聊天</span>
+					</div>
+				</div>
+			</header>
+			<div id="main">
+				<div class="flex-box list">
+					<div class="flex1 img">
+						<img src="../../image/people.jpg"/>
+						<i>1</i>
+					</div>
+					<div class="flex3">
+						<p class="name">韩千叶</p>
+						<p class="info">嗨，认识你很高兴..</p>
+					</div>
+					<div class="flex1 time">今天12:40</div>
+				</div>
+				<div class="flex-box list">
+					<div class="flex1 img">
+						<img src="../../image/people.jpg"/>
+					</div>
+					<div class="flex3">
+						<p class="name">whis</p>
+						<p class="info">我们明天见吧</p>
+					</div>
+					<div class="flex1 time">昨天12:40</div>
+				</div>
+				<div class="flex-box list">
+					<div class="flex1 img">
+						<img src="../../image/people.jpg"/>
+					</div>
+					<div class="flex3">
+						<p class="name">徐璈</p>
+						<p class="info">我大概明白了</p>
+					</div>
+					<div class="flex1 time">前天12:40</div>
+				</div>
+				
+			</div>
+		
+		
+	</div>
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function opennews(){
+				api.openWin({
+				    name: 'news',
+				    url: api.wgtRootDir+ '/html/user/news.html',
+				});
+			}
+</script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/comm.css" />
+	</head>
+	<style>
+		body{
+			background-color: #F3F3F3;
+			/*min-width: 320px;*/
+		}
+		.list{
+			background-color: #fff;
+			margin: 10px;
+			padding: 8px;
+		}
+		.list img{
+			padding-right: 10px;
+		}
+		.title{
+			font-size: 14px;
+			font-weight: 700;
+			padding-top: 10px;
+		}
+		.content{
+			font-size: 12px;
+			color: #717171;
+			padding-bottom: 10px;
+			padding-top: 5px;
+		}
+		span{
+			font-size: 12px;
+		}
+	</style>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="flex-box list" onclick="openTCSQ();">
+					<img src="../../image/11.jpg" />
+					<div class="flex1">
+						<p class="title">就算了就算了就是历史记录历史记录历史记录</p>
+						<p class="content">算了就算了世界了解的了解了世界历史记录时代</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">1680.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">价值￥</span>
+					    		<del style="font-size: 18px;color: #818181;">1680.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list" onclick="openTCSQ();">
+					<img src="../../image/11.jpg" />
+					<div class="flex1">
+						<p class="title">就算了就算了就是历史记录历史记录历史记录</p>
+						<p class="content">算了就算了世界了解的了解了世界历史记录时代</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">1680.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">价值￥</span>
+					    		<del style="font-size: 18px;color: #818181;">1680.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list">
+					<img src="../../image/11.jpg" />
+					<div class="flex1">
+						<p class="title">就算了就算了就是历史记录历史记录历史记录</p>
+						<p class="content">算了就算了世界了解的了解了世界历史记录时代</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">1680.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">价值￥</span>
+					    		<del style="font-size: 18px;color: #818181;">1680.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="flex-box list">
+					<img src="../../image/11.jpg" />
+					<div class="flex1">
+						<p class="title">就算了就算了就是历史记录历史记录历史记录</p>
+						<p class="content">算了就算了世界了解的了解了世界历史记录时代</p>
+					    <div class="flex-box">
+					    	<div class="flex1">
+					    		<span style="color: red;">￥</span>
+					    		<span style="font-weight: 700;font-size: 18px;color: red;">1680.00</span>
+					    	</div>
+					    	<div class="flex1">
+					    		<span style="color: #8B8B8B;">价值￥</span>
+					    		<del style="font-size: 18px;color: #818181;">1680.0</del>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	function openTCSQ(){
+		api.openWin({
+		    name:'tcxqeFrame',
+		    	url:api.wgtRootDir+'/html/window/cheshiTC.html'
+		   	});
+	}
+</script>

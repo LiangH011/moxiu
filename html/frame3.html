@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>文档</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/comm.css" />
+    <style>
+     body{background: #F3F3F3;}
+      .logo{
+      	text-align: center;
+      	padding: 45px 0;
+      }
+      .logo img{
+      	width: 80px;
+      }
+      .login{
+      	padding: 0 25px 20px 25px;
+      	
+      }
+      .login i{
+      	width: 40px;
+      	font-size: 32px;
+      	color: #868686;
+      }
+      .phone{
+      	border-bottom: 1px solid #CACACA;
+      	line-height: 35px;
+      	text-indent: 5px;
+      }
+      .phone input{
+      	width: 100%;
+      	list-style: none;
+      	outline-style: none;
+      	line-height: 35px;
+      }
+      .btn{
+      	margin: 0 25px 20px 25px;
+      	background-color: #40B5F0;
+      	height: 45px;
+      	border-radius: 5px;
+      	color: #fff;
+      	text-align: center;
+      	line-height: 45px;
+      }
+      .passd{
+      	padding-right: 25px;
+      	color: #CCCCCC;
+      	text-align: right;
+      	padding-bottom: 20px;
+      }
+      .newuser{
+      	padding: 20px;
+      	text-align: center;
+      }
+      .userimg{
+      	width: 80px;
+      	height: 80px;
+      	border-radius: 50%;
+      	margin-right: 10px;
+      }
+      .userimg img{
+      	width: 100%;
+      	height: 100%;
+      	border-radius: 50%;
+      }
+      .user{
+      	padding: 20px;
+      	border-bottom: 10px solid #F3F3F3;
+      }
+      .user_name{
+          height: 25px;
+          font-size: 16px;
+          font-weight: 700;
+          margin-top: 10px;
+      }
+      .zhanghu{
+      	font-size: 12px;
+      	color: #6E6F6F;
+      	line-height: 45px;
+      }
+      .zhanghu span{
+      	font-size: 18px;
+      	color: #FF8234;
+      }
+    .list{
+    	height: 45px;
+    	border-bottom: 2px solid #F7F7F7;
+    	line-height: 45px;
+    	padding: 17px 20px;
+    }
+    .title{
+    	width: 45px;
+    	height: 45px;
+    	border-radius: 5px;
+    	background-color: #4DB7E7;
+    	text-align: center;
+    	line-height: 45px;
+    	margin-right: 10px;
+    }
+    .title i{
+    	color: #fff;
+    	font-size: 28px;
+    	position: relative;
+    	top:8px;
+    }
+    .icon-angle-right{
+    	font-size: 40px;
+    	color: #A9A9A9;
+    	line-height: 50px;
+    }      
+    </style>
+</head>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="logo">
+					<img src="../image/logo.png" />
+				</div>
+				<div class="flex-box login">
+					<i class="icon-phone"></i>
+					<div class="flex1 phone">
+						<input type="text" placeholder="请输入手机号码" name="username" />
+					</div>
+				</div>
+				<div class="flex-box login">
+					<i class="icon-lock"></i>
+					<div class="flex1 phone">
+						<input type="text" placeholder="请输入密码" name="pwd" />
+					</div>
+				</div>
+				<div class="btn" onclick="login();">登陆</div>
+				<p class="passd">忘记密码？</p>
+				<p class="newuser" onclick="openZhuce()">新用户？点击我注册</p>
+			</div>
+		</div>
+		<script type="text/template" template="login">
+			<div class="flex-box user">
+				   <div class="userimg"><img src="../icon/icon150x150.png" /></div>
+				   <div class="flex1">
+				      <p class="user_name">{{= it.username}}</p>
+				      <div class="flex-box zhanghu">
+				         <div class="flex1">
+				                                       可用积分:
+				            <span>{{= it.uid}}</span>
+				         </div>
+				         <div class="flex1">
+				                                      账户:<span>358.00</span>元
+				         </div>
+				      </div>
+				   </div>
+				</div>
+				 <div class="flex-box list" onclick="setting();">
+			    	<div class="title" style="background: #4DB7E7;">
+			    		<i class="icon-user"></i>
+			    	</div>
+			    	<div class="flex1" >个人设置</div>
+			    	<i class="icon-angle-right"></i>
+			    </div>
+				<div class="flex-box list" onclick="news();">
+			    	<div class="title" style="background: #8B67E5;">
+			    		<i class="icon-bell-outline"></i>
+			    	</div>
+			    	<div class="flex1" >消息记录</div>
+			    	<i class="icon-angle-right"></i>
+			    </div>
+			    <div class="flex-box list" onclick="pinlun();">
+			    	<div class="title" style="background: #20E073;">
+			    		<i class="icon-bubble"></i>
+			    	</div>
+			    	<div class="flex1" >我的评论</div>
+			    	<i class="icon-angle-right"></i>
+			    </div>
+			    <div class="flex-box list" onclick="zijin();">
+			    	<div class="title" style="background: #EDA63D;">
+			    		<i class="icon-note"></i>
+			    	</div>
+			    	<div class="flex1" >资金记录</div>
+			    	<i class="icon-angle-right"></i>
+			    </div>
+			    <div class="flex-box list" onclick="tixian();">
+			    	<div class="title" style="background: #FFCF2E;">
+			    		<i class="icon-banknote"></i>
+			    	</div>
+			    	<div class="flex1" >提现</div>
+			    	<i class="icon-angle-right"></i>
+			    </div>
+			    <div class="flex-box list" onclick="system();">
+			    	<div class="title" style="background: #7D7D7F;">
+			    		<i class="icon-set"></i>
+			    	</div>
+			    	<div class="flex1" >系统设置</div>
+			    	<i class="icon-angle-right"></i>
+			    </div>
+			 
+		</script>
+		<script type="text/template" template="denglu">
+			<div class="logo">
+					<img src="../image/logo.png" />
+				</div>
+				<div class="flex-box login">
+					<i class="icon-phone"></i>
+					<div class="flex1 phone">
+						<input type="text" placeholder="请输入手机号码" name="username" />
+					</div>
+				</div>
+				<div class="flex-box login">
+					<i class="icon-lock"></i>
+					<div class="flex1 phone">
+						<input type="text" placeholder="请输入密码" name="pwd" />
+					</div>
+				</div>
+				<div class="btn" onclick="login();">登陆</div>
+				<p class="passd">忘记密码？</p>
+				<p class="newuser" onclick="openZhuce()">新用户？点击我注册</p>
+		</script>
+		
+		<script type="text/javascript" src="../script/api.js" ></script>
+		<script type="text/javascript" src="../script/doT.min.js" ></script>
+		<script>
+			function openZhuce(){
+				api.openWin({
+				    name: 'zhuceWin',
+				    url: api.wgtRootDir+ '/html/window/win.html',
+				    pageParam: {
+				       frameName:'zhucefram',
+				       frameUrl:api.wgtRootDir+ '/html/user/zhuce.html',
+				       headerTitle:'注册'
+				    }
+				});
+			}
+			function setting(){
+				api.openWin({
+				    name: 'tuichu',
+				    url: api.wgtRootDir+ '/html/window/win.html',
+				    pageParam: {
+				       frameName:'tuchuiFram',
+				       frameUrl:api.wgtRootDir+ '/html/user/set.html',
+				       headerTitle:'个人设置'
+				    }
+				});
+			}
+			function news(){
+				api.openWin({
+				    name: 'news',
+				    url: api.wgtRootDir+ '/html/user/news.html',
+				   
+				});
+			}
+			function pinlun(){
+				api.openWin({
+				    name: 'pinlun',
+				    url: api.wgtRootDir+ '/html/window/win.html',
+				    pageParam: {
+				       frameName:'pinlunFrame',
+				       frameUrl:api.wgtRootDir+ '/html/user/pinlun.html',
+				       headerTitle:'我的评论'
+				    }
+				});
+			}
+			function zijin(){
+				api.openWin({
+				    name: 'zijin',
+				    url: api.wgtRootDir+ '/html/window/win.html',
+				    pageParam: {
+				       frameName:'zijinFrame',
+				       frameUrl:api.wgtRootDir+ '/html/user/zijin.html',
+				       headerTitle:'资金记录'
+				    }
+				});
+			}
+			function tixian(){
+				api.openWin({
+				    name: 'tixian',
+				    url: api.wgtRootDir+ '/html/window/win.html',
+				    pageParam: {
+				       frameName:'tixianFrame',
+				       frameUrl:api.wgtRootDir+ '/html/user/tixian.html',
+				       headerTitle:'提现'
+				    }
+				});
+			}
+			function system(){
+				api.openWin({
+				    name: 'system',
+				    url: api.wgtRootDir+ '/html/window/win.html',
+				    pageParam: {
+				       frameName:'systemFrame',
+				       frameUrl:api.wgtRootDir+ '/html/user/system.html',
+				       headerTitle:'系统设置'
+				    }
+				});
+			}
+			function login(){
+				var username=$api.val($api.dom("[name=username]"));
+				var pwd=$api.val($api.dom('[name=pwd]'));
+				if(username){
+					if(!/^1[3578]\d{9}$/.test(username)){
+						api.toast({
+					    msg: '手机号码格式不正确',
+					    duration: 2000,
+					    location: 'middle'
+					  });
+					  return;
+					}
+				}else{
+					api.toast({
+					    msg: '用户不能为空',
+					    duration: 2000,
+					    location: 'middle'
+					});
+					return;
+				}
+				if(!pwd){
+					api.toast({
+					    msg: '密码不能为空',
+					    duration: 2000,
+					    location: 'middle'
+					});
+					return;
+				}
+				api.ajax({
+				    url: 'http://118.89.48.244/index.php/Home/App/login',
+				    method: 'post',
+				    data: {
+				        values: {
+				            username: username,
+				            password: pwd
+				        }
+				    }
+				}, function(ret, err) {
+				    if (ret) {
+				    	if(ret.flag==1){
+				    		$api.html($api.dom("#main"),doT.template($api.html($api.dom("[template=login]")))(ret));
+				            $api.setStorage("username",ret.username);
+				            $api.setStorage("password",ret.password);
+				            $api.setStorage("uid",ret.uid);
+				    	}else{
+				    		alert(ret.msg);
+				    	}
+//				        api.alert({ msg: JSON.stringify(ret) });
+				    } else {
+				        api.alert({ msg: JSON.stringify(err) });
+				    }
+				});
+			}
+			/*
+			 *  自动登录
+			 *  自动获取到用户名和密码
+			 *  
+			 * */
+			//当html执行完后立即执行的js代码
+			apiready=function(){
+				//第二次执行页面的时候，自动获取到缓存在本地的数据
+				var username=$api.getStorage("username");
+				var password=$api.getStorage("password");
+				if(username!=undefined&&password!=undefined){
+					$api.html($api.dom("#main"),doT.template($api.html($api.dom("[template=login]")))());
+				}else{
+					$api.html($api.dom("#main"),doT.template($api.html($api.dom("[template=denglu]")))());
+				}
+				//重新登录
+				 api.addEventListener({
+					    name: 'outLogin'
+					}, function(ret, err) {
+						$api.html($api.dom("#main"),doT.template($api.html($api.dom("[template=denglu]")))());
+//					    alert(JSON.stringify(ret.value));
+					});
+//			     alert($api.getStorage("username"));
+				//接收注册成功过后广播出来的数据
+				api.addEventListener({
+				    name: 'myEvent' //接收广播事件的用户名
+				}, function(ret, err) {
+					api.ajax({
+				    url: 'http://118.89.48.244/index.php/Home/App/login',
+				    method: 'post',
+				    data: {
+				        values: {
+				            username: ret.value.username,
+				            password: ret.value.password
+				        }
+				    }
+				}, function(ret, err) {
+				    if (ret) {
+				    	if(ret.flag==1){
+				    		$api.html($api.dom("#main"),doT.template($api.html($api.dom("[template=login]")))(ret));
+				    	    $api.setStorage("username",ret.username);
+				            $api.setStorage("password",ret.password);
+				            $api.setStorage("uid",ret.uid);
+				    	}else{
+				    		alert(ret.msg);
+				    	}
+//				        api.alert({ msg: JSON.stringify(ret) });
+				    } else {
+				        api.alert({ msg: JSON.stringify(err) });
+				    }
+				  });
+				});
+			}
+		</script>
+	</body>
+</html>

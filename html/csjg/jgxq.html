@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>机构详情</title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" href="../../css/comm.css" />
+	</head>
+	<style>
+		#main {
+			padding: 10px;
+		}
+		
+		.title {
+			border-left: 4px solid #40B5F0;
+			line-height: 22px;
+			padding-left: 10px;
+			margin-bottom: 10px;
+		}
+		
+		.time {
+			margin-bottom: 10px;
+			color: #999;
+			font-size: 14px;
+		}
+		
+		#main>p {
+			line-height: 30px;
+			text-indent: 22px;
+			color: #737373;
+			font-size: 14px;
+			word-wrap: break-word;
+		}
+		
+		.contact {
+			width: 200px;
+			border-left: 4px solid #40B5F0;
+			margin: 0 auto;
+			margin-top: 30px;
+			margin-bottom: 10px;
+		}
+		
+		.contact p {
+			color: #394143;
+			padding-left: 6px;
+			line-height: 30px;
+		}
+		
+		header {
+			height: 50px;
+			border-bottom: 1px solid #3B9ACB;
+			line-height: 50px;
+			font-size: 14px;
+		}
+		
+		.icon-angle-left {
+			font-size: 32px;
+			position: relative;
+			top: 8px;
+			padding-left: 15px;
+			color: #6E6F6F;
+		}
+		
+		footer {
+			height: 70px;
+			background-color: #fff;
+		}
+		
+		.foot {
+			padding: 0 60px;
+		}
+		
+		.foot img {
+			width: 50px;
+			height: 50px;
+		}
+		
+		.cart {
+			height: 30px;
+			line-height: 30px;
+			border-radius: 5px;
+			background: #19B5FE;
+			padding: 10px;
+			text-align: center;
+			color: #fff;
+			font-size: 16px;
+			font-weight: 800;
+			margin-right: 10px;
+			margin-top: 5px;
+		}
+		
+		.buy {
+			height: 30px;
+			line-height: 30px;
+			border-radius: 5px;
+			background: #1DE175;
+			padding: 10px;
+			text-align: center;
+			color: #fff;
+			font-size: 16px;
+			font-weight: 800;
+			margin-top: 5px;
+		}
+	</style>
+
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="flex-box">
+					<div class="flex1">
+						<i class="icon-angle-left" onclick="api.closeWin();"></i>
+						<span style="padding-left: 10px; color: #333;font-size: 16px;">机构详情</span>
+					</div>
+				</div>
+			</header>
+			<div id="main">
+				<div class="title">新进半导体公司实施SPS招标信息</div>
+				<p>随着紫光集团有限公司一次出资协议公开，到目前为止，中国半导体行业（也被称为IC产业）最大一笔投资落地。</p>
+				<p>日前，紫光集团对外公布，计划通过其下属控股子公司紫光控股，与长江存储现有股东共同出资设立长江控股以实现对长江存储的控制，其中，紫光控股出资197亿元，占长江控股注册资本的51.04%，担任长江存储的控股股东。</p>
+				<p>这是我国IC产业目前落地的最大规模项目。”一位立足湖北的券商研究员对21世纪经济报道记者表示，近几年来，中国加大对IC产业的政策扶持，特别是在资金方面的投入，全国规划5年投入6000亿元进行专项扶持，而国家战略的目的是改变中国在全球IC产业格局中产业附加值较低的封测工序市场占比大，其他领域占比低的局面，并寻求向附加值更高的芯片设计领域升级的产业发展路径。</p>
+			</div>
+			<footer>
+				<div class="flex-box foot">
+					<div class="flex1 cart" onclick="myLogin();">
+						<i class="icon-adress"></i> 查看地图
+					</div>
+					<div class="flex1 buy">
+						<i class="icon-call" style="font-size: 20px;position: relative;top:0px;"></i> 立即拨打
+					</div>
+
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript" src="../../script/api.js"></script>
+		<script>
+			apiready = function() {
+				var header = $api.dom("#header");
+				headerPos = $api.offset(header);
+				var main = $api.dom("#main");
+				mainPos = $api.offset(main);
+				//		    	    alert();
+				//		    	    return;
+				api.openFrame({
+					name: 'csxqFrame',
+					url: api.wgtRootDir + '/html/csjg/jgxq.html',
+					rect: {
+						x: 0,
+						y: headerPos.h,
+						w: 'auto',
+						h: mainPos.h
+					}
+				});
+			}
+
+			function myLogin() {
+				api.openWin({
+					name: 'login',
+					url: api.wgtRootDir + '/html/window/win.html'
+				});
+			}
+		</script>
+	</body>
+
+</html>

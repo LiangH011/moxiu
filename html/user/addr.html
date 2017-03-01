@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>地址管理</title>
+		<link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/comm.css"/>
+		<style>
+			#main{background: #F3F3F3;}
+			.list{border-bottom: 1px solid #C9C9C9;font-size: 14px; border-top: 1px solid #C9C9C9;background: #fff;padding: 10px 0;margin-bottom: 10px;}
+			.title{padding: 10px 0;height: 30px;line-height: 30px;text-align: center;font-size: 14px;color: #232323;}
+			.moren{text-align: right;padding-right: 10px;}
+			.moren span{padding: 0 15px;background: #86D8CA;color: #fff;border-radius: 10px;}
+			.address{padding:20px 0; margin:0 10px; border-bottom: 1px solid #C9C9C9;line-height: 22px;color: #7E7E7E;}
+			.shezhi{text-align: right;padding:5px 10px; color: #7E7E7E;height: 30px;line-height: 30px;}
+			.icon-radio_1,.icon-edit2,.icon-delete{font-size:24px;position: relative;top: 5px;padding-right: 5px;}
+			.shezhi span{margin:0 10px;}
+			.footer{text-align: center;height: 50px;line-height: 50px;}
+		.footer span{width:200px;height: 40px;line-height: 40px;background: #40B5F0;color: #fff;border-radius: 5px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="list">
+					<div class="flex-box title">
+						<div class="flex1">莫妮卡n</div>
+						<div class="flex1">156****2235</div>
+						<div class="flex1 moren"><span>默认</span></div>
+					</div>
+					<p class="address">广东省东莞市南城区三元里社区财经商务大厦1628</p>
+					<div class="shezhi">
+						<span><i class="icon-edit2"></i>编辑</span>
+						<span><i class="icon-delete"></i>删除</span>
+					</div>
+				</div>
+				<div class="list">
+					<div class="flex-box title">
+						<div class="flex1">小小</div>
+						<div class="flex2">123****2235</div>
+					</div>
+					<p class="address">广东省东莞市南城区三元里社区财经商务大厦1628</p>
+					<div class="flex-box shezhi">
+						<div class="flex1"style="text-align: left;"><span ><i class="icon-radio_1"></i>设为默认</span></div>
+						<div class="flex1">
+							<span><i class="icon-edit2"></i>编辑</span>
+							<span><i class="icon-delete"></i>删除</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<footer class="footer" onclick="addAddr()">
+				<span><i class="icon-plus"></i>添加地址</span>
+			</footer>
+		</div>
+		
+		
+	</body>
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	function addAddr(){
+				api.openWin({
+					 name: 'addAddr',
+				     url: api.wgtRootDir+ '/html/window/win.html',
+					pageParam: {
+						frameName:'addrFrame',
+						frameUrl:api.wgtRootDir+ '/html/user/addAddr.html',
+						headerTitle:'添加地址'
+					}
+				});
+			}
+</script>

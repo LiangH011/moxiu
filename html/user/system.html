@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>消息免打扰</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/comm.css"/>
+    <style>
+         .proList{height: 100px;border-bottom: 1px solid #F3F3F3;line-height: 100px;text-align: center;background: #fff;}
+        .box1 .proImg i{background: #64CBFF;}
+        .box2 .proImg i{background: #20E073;}
+        .box3 .proImg i{background: #40B5F0;}
+        .box4 .proImg i{background: #535353;}
+        .box5 .proImg i{background: #F04040;}
+        .box6 .proImg i{background: #3AD0CE;}
+        .box7 .proImg i{background: #EDB72F;}
+        .proImg{text-align: left;padding-left: 10px;}
+        .proImg i{ color: #fff;font-size:40px;position: relative;top: 10px;padding: 10px;padding-top:5px;border-radius: 10px;}
+        .title{color: #666;padding-left: 10px;font-size:16px;}
+        .arrow{text-align: right;padding-right: 20px;}
+        .arrow i{font-size:60px;color: #A9A9A9;position: relative;top:20px;}
+    </style>
+</head>
+<body>
+   <div id="wrap">
+    	<div id="main">
+    		<div class="flex-box proList box1" >
+    			<div class="flex1 proList proImg">
+    				<i class="icon-news"></i>
+    				<span class="title">在线客服</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box2">
+    			<div class="flex1 proImg">
+    				<i class="icon-call"></i>
+    				<span class="title">电话客服</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box3" >
+    			<div class="flex1 proImg">
+    				<i class="icon-about"></i>
+    				<span class="title">关于我们</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box4" >
+    			<div class="flex1 proImg">
+    				<i class="icon-complain"></i>
+    				<span class="title">投诉建议</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box5">
+    			<div class="flex1 proImg">
+    				<i class="icon-help"></i>
+    				<span class="title">帮助及反馈</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box6" onclick="mdrOFF();">
+    			<div class="flex3 proImg">
+    				<i class="icon-uninterference"></i>
+    				<span class="title">消息免打扰</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    		<div class="flex-box proList box7" onclick="outLogin();">
+    			<div class="flex2 proImg">
+    				<i class="icon-logout"></i>
+    				<span class="title">退出</span>
+    			</div>  	
+    			<div class="flex1 arrow">
+    				<i class="icon-angle-right"></i>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    
+</body>
+
+</html>
+<script src="../../script/api.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	/**
+	 *  退出登录
+	 *  删除本地的缓存数据
+	 *  第一步：定义函数
+	 *  第二步: 使用弹出框提示用户是否真要退出
+	 *  第三步： 删除本地储存的用户名和密码
+	 *  第四步： 在关闭窗口之前 ，广播一个事件（登录界面的时候加载登录页面）
+	 * */
+	
+	function outLogin(){
+		api.confirm({
+		    title: '提示信息',
+		    msg: '你确定要退出吗？',
+		    buttons: ['确定', '取消']
+		}, function(ret, err) {
+			if(ret.buttonIndex==1){
+				$api.rmStorage("username");
+				$api.rmStorage("password");//删除本地储存的数据
+				//作用在登录界面时接收这个广播事件，用于加载登录的模块
+				api.sendEvent({
+				    name: 'outLogin'
+				});
+				api.closeWin();
+			}
+		});
+	}
+	
+	
+	function mdrOFF(){
+				api.openWin({
+					 name: 'mdrOFF',
+				     url: api.wgtRootDir+ '/html/window/win.html',
+					pageParam: {
+						frameName:'addrFrame',
+						frameUrl:api.wgtRootDir+ '/html/user/mdrOFF.html',
+						headerTitle:'消息免打扰'
+					}
+				});
+			}
+</script>

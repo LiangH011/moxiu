@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/comm.css" />
+		<link rel="stylesheet" href="../../css/api.css" />
+	</head>
+	    <script type="text/javascript" src="../../script/api.js" ></script>
+		<script type="text/javascript" src="../../script/doT.min.js" ></script>
+	<style>
+		.title{
+			height: 35px;
+			line-height: 35px;
+		}
+		.title div{
+			font-size: 14px;
+			font-weight: 700;
+			text-align: center;
+		}
+		.content{
+			line-height: 35px;
+		}
+		.content div{
+			text-align: center;
+			font-size: 14px;
+			color: deeppink;
+		}
+		.footer{text-align: center;height: 50px;line-height: 50px;}
+		.footer span{width:200px;height: 40px;line-height: 40px;background: #1E8BC3;color: #fff;border-radius: 5px;}
+	</style>
+	<body>
+		<div id="wrap">
+			    <div class="flex-box title">
+					<div class="flex1">用户名</div>
+					<div class="flex1">密码</div>
+					<div class="flex1">邮箱</div>
+					<div class="flex1">qq</div>
+				</div>
+			<div id="main">
+				
+			</div>
+			<footer class="footer" onclick="addemail()">
+				<span><i class="icon-plus"></i>添加邮箱</span>
+			</footer>
+		</div>
+		<!-- {{ 包含的是dot.js的基本语法 }}  -->
+		   <!-- 判断条件包括后台响应给我们的是不是一个数组 并且长度不为0的时候  -->
+		   <!-- 循环数组使用 {{~}}  -->
+		<script type="text/template" template="list">
+			{{ if(it instanceof Array && it.length!=0){ }}
+			    {{~ it :value:index}}
+			    <div class="flex-box content">
+					<div class="flex1">{{= value.username}}</div>
+					<div class="flex1">{{= value.password}}</div>
+					<div class="flex1">{{= value.email}}</div>
+					<div class="flex1">{{= value.qq}}</div>
+				</div>
+				{{~}}
+			{{ }else{ }}
+			   <div>暂无数据</div>
+			{{ } }}
+		</script>
+		
+		<script>
+			apiready=function(){
+				emailList();
+			}
+			/**
+			 *  第一步：ajax请求数据
+			 *  第二步：请求成功过后加载模板
+			 *  第三步：判断模板是否从后台获取到数据
+			 *  第四步：如果有数据，循环打印数据
+			 * */
+			function emailList(){
+				api.ajax({
+				    url: 'http://118.89.48.244/index.php/Home/App/get_userinfo',
+				    method: 'post',
+				    data: {
+				        values: {
+				            id: $api.getStorage("uid")
+				        }
+				    }
+				}, function(ret, err) {
+				    if (ret) {
+				    	if(ret.flag==1){
+				    		alert($api.jsonToStr(ret));
+				    		$api.html($api.dom("#main"),doT.template($api.html($api.dom("[template=list]")))(ret.userinfo));
+				    	}else{
+				    		alert(ret.msg);
+				    	}
+//				    	
+//				    	alert($api.jsonToStr(ret));
+//				        api.alert({ msg: JSON.stringify(ret) });
+				    } else {
+				        api.alert({ msg: JSON.stringify(err) });
+				    }
+				});
+			}
+			
+			function addemail(){
+				api.openWin({
+					 name: 'addemail',
+				     url: api.wgtRootDir+ '/html/window/win.html',
+					pageParam: {
+						frameName:'addrFrame',
+						frameUrl:api.wgtRootDir+ '/html/user/addemail.html',
+						headerTitle:'添加邮箱'
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

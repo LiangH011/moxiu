@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/comm.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/carousel.css" />
+ 	<script type="text/javascript" src="../script/swiper.min.js" ></script>
+	  <script type="text/javascript" src="../script/api.js" ></script>
+    <style>
+    .one{
+    	padding: 8px 8px 0 8px;
+    }
+     .one div{
+     	height: 140px;
+     	border-radius: 5px;
+     	color: #fff;
+     	text-align: center;
+     }
+     .left{
+     	margin-left: 5px;
+     }
+     .one p{
+     	padding-top: 25px;
+     	padding-bottom: 10px;
+     	color:#f07;
+     }
+     
+     .two{
+     	padding: 10px 8px 0 8px;
+     }
+     .two div{
+     	height:120px;
+     	border-radius: 5px;
+     	color: #fff;
+     	/*line-height: 0px;*/
+     	text-align: center;
+     	font-size: 20px;
+     	
+     }
+     .two img{
+     	width:100px;
+
+     	position: relative;
+     	top:15px;
+     	padding-right: 5px;
+     	
+     }
+     .three img{
+     	width:100%;
+     	height: 100%;
+     	position: relative;
+     	top:15px;
+     	padding-right: 5px;
+     	
+     }
+     .three{
+     	padding: 10px 8px 0 8px;
+     }
+     .three div{
+     	height:120px;
+     	border-radius: 5px;
+     	color: #fff;
+     	/*line-height: 0px;*/
+     	text-align: center;
+     	font-size: 20px;
+     	
+     }
+     .nav_img{width:80px;height:80px;border-radius: 50%;}
+    </style>
+</head>
+<body>
+	 <div class="flex-box">
+	 	<div class="swiper-container" style="height: 150px;">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+	              <img src="../image/banner1.jpg">
+	            </div>
+	            <div class="swiper-slide">
+	              <img src="../image/banner2.jpg">
+	            </div>
+	            <div class="swiper-slide">
+	              <img src="../image/banner3.jpg">
+	            </div>
+	        </div>
+	        <!-- Add Pagination -->
+	        <div class="swiper-pagination"></div>
+	        <!-- 左右图标按钮 -->
+	        <!--<div class="swiper-button-next"></div>
+	        <div class="swiper-button-prev"></div> -->
+   		 </div> 
+	 </div>
+	 <div class="flex-box one">
+	 	<div class="flex1" onclick="openWeiyi();">
+	 		<img src="../image/nav_img1.jpg" class="nav_img"/>
+	 		<p>卫衣新品</p>
+	 	</div>
+	 	<div class="flex1 left"  onclick="openLianyiqun();">
+	 	   <img src="../image/nav_img2.jpg" class="nav_img"/>
+	 	   <p>连衣裙</p>
+	 	</div>
+	 	<div class="flex1 left"  onclick="openBanshenqun();">
+	 		<img src="../image/nav_img3.jpg" class="nav_img"/>
+	 	  <p>半身裙</p>
+	 	</div>
+	 </div>
+	 <div class="flex-box one">
+	 	<div class="flex1" onclick="openMaoyi();">
+	 		<img src="../image/nav_img4.jpg" class="nav_img"/>
+	 		<p>毛衣</p>
+	 	</div>
+	 	<div class="flex1 left"  onclick="openWaitao();">
+	 	   <img src="../image/nav_img5.jpg" class="nav_img"/>
+	 	   <p>外套</p>
+	 	</div>
+	 	<div class="flex1 left"  onclick="openKuzi();">
+	 		<img src="../image/nav_img6.jpg" class="nav_img"/>
+	 	  <p>显瘦裤子</p>
+	 	</div>
+	 </div>
+	 <div class="flex-box one">
+	 	<div class="flex1" onclick="openBeidai();">
+	 		<img src="../image/nav_img7.jpg" class="nav_img"/>
+	 		<p>背带装</p>
+	 	</div>
+	 	<div class="flex1 left"  onclick="openXiezi();">
+	 	   <img src="../image/nav_img8.jpg" class="nav_img"/>
+	 	   <p>鞋子</p>
+	 	</div>
+	 	<div class="flex1 left"  onclick="openPeishi();">
+	 		<img src="../image/nav_img9.jpg" class="nav_img"/>
+	 	  <p>配饰</p>
+	 	</div>
+	 </div>
+	  	
+	  <script>
+		    var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		//        左右图标按钮
+		//         nextButton: '.swiper-button-next',
+		//         prevButton: '.swiper-button-prev',
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		        centeredSlides: true,
+		        autoplay: 2500,
+		        autoplayDisableOnInteraction: false
+		    });
+		    function openWeiyi(){
+		    	api.openWin({
+				    name: 'weiyi',
+				    url: api.wgtRootDir + '/html/window/weiyi.html'
+				});
+		    }
+		    
+		    function openLianyiqun(){
+		    	api.openWin({
+		    		name:'lianyiqun',
+		    		url:api.wgtRootDir+'/html/window/lianyiqun.html'
+		    	});
+		    }
+		    function openBanshenqun(){
+		    	api.openWin({
+		    		name:'banshenqun',
+		    		url:api.wgtRootDir+'/html/window/banshenqun.html'
+		    	});
+		    }
+		    function openMaoyi(){
+		    	api.openWin({
+		    		name:'maoyi',
+		    		url:api.wgtRootDir+'/html/window/maoyi.html'
+		    	});
+		    }
+		    function openWaitao(){
+		    	api.openWin({
+		    		name:'waitao',
+		    		url:api.wgtRootDir+'/html/window/waitao.html'
+		    	});
+		    }
+		    function openKuzi(){
+		    	api.openWin({
+		    		name:'kuzi',
+		    		url:api.wgtRootDir+'/html/window/kuzi.html'
+		    	});
+		    }
+		    function openBeidai(){
+		    	api.openWin({
+		    		name:'beidai',
+		    		url:api.wgtRootDir+'/html/window/beidai.html'
+		    	});
+		    }
+		    function openXiezi(){
+		    	api.openWin({
+		    		name:'xiezi',
+		    		url:api.wgtRootDir+'/html/window/xiezi.html'
+		    	});
+		    }
+		    function openPeishi(){
+		    	api.openWin({
+		    		name:'peishi',
+		    		url:api.wgtRootDir+'/html/window/peishi.html'
+		    	});
+		    }
+    </script>
+</body>
+</html>
